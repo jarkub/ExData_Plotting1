@@ -18,6 +18,6 @@ power <- filter(power, Date == "1/2/2007" | Date == "2/2/2007")
 power$DateTime <- paste(power$Date, power$Time, sep=" ")
 power$DateTime <- dmy_hms(power$DateTime)
 
-png("./plot2.png")
+png("./plot2.png", width = 480, height = 480)
 with(power, plot(DateTime, Global_active_power, type="l", xlab="", ylab="Global Active Power (kilowatts)", cex.lab=0.8, cex.axis=0.8))
 dev.off()

@@ -18,7 +18,7 @@ power <- filter(power, Date == "1/2/2007" | Date == "2/2/2007")
 power$DateTime <- paste(power$Date, power$Time, sep=" ")
 power$DateTime <- dmy_hms(power$DateTime)
 
-png("./plot3.png")
+png("./plot3.png", width = 480, height = 480)
 with(power, plot(DateTime, Sub_metering_1, type="n", xlab="", ylab="Energy sub metering", cex.lab=0.8, cex.axis=0.8))
 with(power, lines(DateTime, Sub_metering_1))
 with(power, lines(DateTime, Sub_metering_2, col="red"))
